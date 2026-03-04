@@ -1,0 +1,55 @@
+plugins {
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.androidKmpLibrary)
+}
+
+kotlin {
+    android {
+        namespace = "com.mikitazayanchkouski.pexelskmp.composeapp"
+        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        minSdk = libs.versions.android.minSdk.get().toInt()
+
+        /* Explicitly enabling Android resources, that are been generated,
+         * to be able to make our debug build run, on an Ios simulator.
+         */
+        experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
+    }
+    
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "ComposeApp"
+            isStatic = true
+            freeCompilerArgs += listOf("-Xbinary=bundleId=com.mikitazayanchkouski.pexelskmp")
+        }
+    }
+    
+    sourceSets {
+        androidMain.dependencies {
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.androidx.activity.compose)
+        }
+        commonMain.dependencies {
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+        }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+    }
+}
+
+dependencies {
+    androidRuntimeClasspath(libs.compose.ui.tooling)
+}
