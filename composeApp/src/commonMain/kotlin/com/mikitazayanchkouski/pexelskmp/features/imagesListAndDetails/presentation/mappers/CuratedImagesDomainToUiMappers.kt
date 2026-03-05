@@ -1,11 +1,11 @@
-package com.mikitazayanchkouski.pexelskmp.core.presentation.mappers
+package com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.mappers
 
-import com.mikitazayanchkouski.pexelskmp.core.domain.network.models.CuratedImagesDomainModel
-import com.mikitazayanchkouski.pexelskmp.core.domain.network.models.ImageDomainModel
-import com.mikitazayanchkouski.pexelskmp.core.domain.network.models.ImageSrcDomainModel
-import com.mikitazayanchkouski.pexelskmp.core.presentation.models.CuratedImagesUiModel
-import com.mikitazayanchkouski.pexelskmp.core.presentation.models.ImageSrcUiModel
-import com.mikitazayanchkouski.pexelskmp.core.presentation.models.ImageUiModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.CuratedImagesDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.ImageDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.ImageSrcDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models.CuratedImagesUiModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models.ImageSrcUiModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models.ImageUiModel
 
 fun CuratedImagesDomainModel.mapToUiModel(): CuratedImagesUiModel {
     return CuratedImagesUiModel(

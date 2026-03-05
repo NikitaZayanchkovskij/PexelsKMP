@@ -1,4 +1,4 @@
-package com.mikitazayanchkouski.pexelskmp.core.data.network.models
+package com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.network.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

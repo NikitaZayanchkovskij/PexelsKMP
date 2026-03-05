@@ -1,4 +1,4 @@
-package com.mikitazayanchkouski.pexelskmp.core.domain.network.models
+package com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models
 
 data class CuratedImagesDomainModel(
     val pageNumber: Int,

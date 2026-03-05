@@ -30,8 +30,8 @@ class HttpClientFactory(
                 )
             }
             install(plugin = HttpTimeout) {
-                socketTimeoutMillis = NetworkConstants.SOCKET_TIMEOUT
-                requestTimeoutMillis = NetworkConstants.REQUEST_TIMEOUT
+                socketTimeoutMillis = CoreNetworkConstants.SOCKET_TIMEOUT
+                requestTimeoutMillis = CoreNetworkConstants.REQUEST_TIMEOUT
             }
             install(plugin = Logging) {
                 logger = object : Logger {
@@ -44,7 +44,7 @@ class HttpClientFactory(
             defaultRequest {
                 header(
                     key = "x-api-key",
-                    value = NetworkConstants.API_KEY
+                    value = CoreNetworkConstants.API_KEY
                 )
                 contentType(type = ContentType.Application.Json)
             }

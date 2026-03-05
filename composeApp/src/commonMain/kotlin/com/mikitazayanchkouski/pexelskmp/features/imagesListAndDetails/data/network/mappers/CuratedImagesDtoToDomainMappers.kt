@@ -1,11 +1,11 @@
-package com.mikitazayanchkouski.pexelskmp.core.data.network.mappers
+package com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.network.mappers
 
-import com.mikitazayanchkouski.pexelskmp.core.data.network.models.CuratedImagesDto
-import com.mikitazayanchkouski.pexelskmp.core.data.network.models.ImageDto
-import com.mikitazayanchkouski.pexelskmp.core.data.network.models.ImageSrcDto
-import com.mikitazayanchkouski.pexelskmp.core.domain.network.models.CuratedImagesDomainModel
-import com.mikitazayanchkouski.pexelskmp.core.domain.network.models.ImageDomainModel
-import com.mikitazayanchkouski.pexelskmp.core.domain.network.models.ImageSrcDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.network.models.CuratedImagesDto
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.network.models.ImageDto
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.network.models.ImageSrcDto
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.CuratedImagesDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.ImageDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.ImageSrcDomainModel
 
 fun CuratedImagesDto.mapToDomainModel(): CuratedImagesDomainModel {
     return CuratedImagesDomainModel(

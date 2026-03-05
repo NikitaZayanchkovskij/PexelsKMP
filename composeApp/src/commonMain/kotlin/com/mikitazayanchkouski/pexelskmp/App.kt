@@ -1,6 +1,5 @@
 package com.mikitazayanchkouski.pexelskmp
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,8 +19,6 @@ import com.mikitazayanchkouski.pexelskmp.core.presentation.theme.PexelsTheme
 
 @Composable
 fun App() {
-    val colorScheme = MaterialTheme.colorScheme
-
     PexelsTheme {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
@@ -31,17 +28,15 @@ fun App() {
                 modifier = Modifier
                     .padding(paddingValues = paddingValues)
                     .fillMaxSize(),
-                color = colorScheme.background
+                color = MaterialTheme.colorScheme.background
             ) {
                 Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(color = colorScheme.background),
+                    modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
                         text = "This is my Pexels APP",
-                        color = colorScheme.onSurface
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
             }

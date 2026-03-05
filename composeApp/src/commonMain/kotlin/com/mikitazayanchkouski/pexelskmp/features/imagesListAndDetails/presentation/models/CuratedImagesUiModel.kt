@@ -1,4 +1,4 @@
-package com.mikitazayanchkouski.pexelskmp.core.presentation.models
+package com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models
 
 // TODO: Later check, which parameters I need, and which I don't
 data class CuratedImagesUiModel(
