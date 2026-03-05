@@ -1,6 +1,5 @@
 package com.mikitazayanchkouski.pexelskmp
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -8,14 +7,13 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.AndroidUiModes
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.mikitazayanchkouski.pexelskmp.core.presentation.theme.PexelsTheme
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.curatedImagesScreen.ui.CuratedImagesRoot
 
 @Composable
 fun App() {
@@ -30,15 +28,7 @@ fun App() {
                     .fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = "This is my Pexels APP",
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
-                }
+                CuratedImagesRoot()
             }
         }
     }

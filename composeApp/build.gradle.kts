@@ -49,6 +49,9 @@ kotlin {
             implementation(libs.material3.adaptive)
             implementation(libs.bundles.ktor.common)
             implementation(libs.touchlab.kermit)
+
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.bundles.koin.common)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
