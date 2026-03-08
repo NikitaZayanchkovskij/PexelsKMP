@@ -1,8 +1,8 @@
 package com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.mappers
 
-import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.CuratedImagesDomainModel
-import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.ImageDomainModel
-import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.network.models.ImageSrcDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.dataSource.remote.models.CuratedImagesDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.dataSource.remote.models.ImageDomainModel
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.domain.dataSource.remote.models.ImageSrcDomainModel
 import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models.CuratedImagesUiModel
 import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models.ImageSrcUiModel
 import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.presentation.models.ImageUiModel

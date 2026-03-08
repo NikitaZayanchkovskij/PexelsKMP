@@ -1,6 +1,7 @@
 package com.mikitazayanchkouski.pexelskmp.core.data.network
 
 import com.mikitazayanchkouski.pexelskmp.core.domain.logging.PexelsLogger
+import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.dataSource.remote.ImagesNetworkConstants
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.HttpTimeout
@@ -46,6 +47,7 @@ class HttpClientFactory(
                     key = "x-api-key",
                     value = CoreNetworkConstants.API_KEY
                 )
+                url(urlString = ImagesNetworkConstants.BASE_URL)
                 contentType(type = ContentType.Application.Json)
             }
         }
