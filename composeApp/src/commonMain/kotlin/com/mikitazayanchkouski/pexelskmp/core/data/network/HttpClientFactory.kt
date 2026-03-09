@@ -1,7 +1,7 @@
 package com.mikitazayanchkouski.pexelskmp.core.data.network
 
 import com.mikitazayanchkouski.pexelskmp.core.domain.logging.PexelsLogger
-import com.mikitazayanchkouski.pexelskmp.features.imagesListAndDetails.data.dataSource.remote.ImagesNetworkConstants
+import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.data.dataSource.remote.ImagesNetworkConstants
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.HttpTimeout
