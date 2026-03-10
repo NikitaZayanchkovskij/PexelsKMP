@@ -1,4 +1,4 @@
-package com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.viewModel
+package com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -53,7 +53,8 @@ class CuratedImagesViewModel(
          */
         .onStart {
             if (!isInitialDataLoaded) {
-                loadImages()
+                println("Load images...")
+//                loadImages()
                 isInitialDataLoaded = true
             }
         }
@@ -65,7 +66,16 @@ class CuratedImagesViewModel(
 
     fun onUserAction(action: CuratedImagesActions) {
         when (action) {
-            is CuratedImagesActions.OnImageClick -> println("Open Image Details Screen")
+            is CuratedImagesActions.OnNavigateToImageDetails -> {
+                viewModelScope.launch {
+                    eventChannel.send(
+                        element = CuratedImagesEvents.OnNavigateToImageDetails(
+                            imageId = action.imageId
+                        )
+                    )
+                }
+            }
+
             CuratedImagesActions.OnRefresh -> println("OnRefresh")
             CuratedImagesActions.OnLoadImages -> loadImages()
         }

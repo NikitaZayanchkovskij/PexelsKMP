@@ -1,4 +1,4 @@
-package com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.viewModel
+package com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.viewModel
 
 import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.models.CuratedImagesUiModel
 

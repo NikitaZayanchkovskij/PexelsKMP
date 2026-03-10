@@ -13,7 +13,8 @@ import androidx.compose.ui.tooling.preview.AndroidUiModes
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.mikitazayanchkouski.pexelskmp.core.presentation.theme.PexelsTheme
-import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.ui.CuratedImagesRoot
+import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.ui.CuratedImagesRoot
+import com.mikitazayanchkouski.pexelskmp.navigation.NavigationRoot
 
 @Composable
 fun App() {
@@ -28,11 +29,7 @@ fun App() {
                     .fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                CuratedImagesRoot(
-                    onNavigateToImageDetails = { imageId ->
-
-                    }
-                )
+                NavigationRoot()
             }
         }
     }

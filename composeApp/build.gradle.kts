@@ -54,6 +54,7 @@ kotlin {
             implementation(libs.material3.adaptive)
             implementation(libs.touchlab.kermit)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.jetbrains.compose.navigation)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

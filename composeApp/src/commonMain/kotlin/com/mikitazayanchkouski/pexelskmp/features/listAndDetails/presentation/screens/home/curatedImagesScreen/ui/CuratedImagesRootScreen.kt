@@ -1,7 +1,10 @@
-package com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.ui
+package com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -19,16 +22,16 @@ import com.mikitazayanchkouski.pexelskmp.core.presentation.utils.ObserveAsOneTim
 import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.models.CuratedImagesUiModel
 import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.models.ImageSrcUiModel
 import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.models.ImageUiModel
-import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.viewModel.CuratedImagesActions
-import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.viewModel.CuratedImagesEvents
-import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.viewModel.CuratedImagesState
-import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.curatedImagesScreen.viewModel.CuratedImagesViewModel
+import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.viewModel.CuratedImagesActions
+import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.viewModel.CuratedImagesEvents
+import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.viewModel.CuratedImagesState
+import com.mikitazayanchkouski.pexelskmp.features.listAndDetails.presentation.screens.home.curatedImagesScreen.viewModel.CuratedImagesViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun CuratedImagesRoot(
     viewModel: CuratedImagesViewModel = koinViewModel(),
-    onNavigateToImageDetails: (Int) -> Unit
+    onNavigateToImageDetails: (Long) -> Unit
 ) {
     val imagesState by viewModel.state.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -38,6 +41,7 @@ fun CuratedImagesRoot(
             is CuratedImagesEvents.OnNavigateToImageDetails -> {
                 onNavigateToImageDetails(event.imageId)
             }
+
             is CuratedImagesEvents.OnImagesLoadingFailed -> println(
                 "OnImagesLoadingFailed show info in snack bar"
                 /* А на фоне, где должны быть изображения
@@ -61,11 +65,21 @@ private fun CuratedImagesScreen(
     imagesState: CuratedImagesState,
     userAction: (CuratedImagesActions) -> Unit
 ) {
-    Box(
+    Column(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(text = "CuratedImagesScreen")
+        Button(
+            onClick = {
+                userAction(
+                    CuratedImagesActions.OnNavigateToImageDetails(imageId = 12345)
+                )
+            }
+        ) {
+            Text("Go to image details screen")
+        }
     }
 }
 
